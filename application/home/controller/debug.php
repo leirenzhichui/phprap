@@ -42,10 +42,6 @@ class debug extends controller {
             $header_data[] = $header['key'][$k1].':'.$v1;
         }
 
-        dump($header_data);
-        $header_data = ['Authorization:Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImVmYjJhYzk5ZWRiZjI1M2ViNTQ1YzQ4M2QwMDkxYjdkY2UyMDMyNDYyOTUwMTJmYzkzOTQxZTA2ZTU3MTBmMGE4MzZmM2IyYjMxMGQ3OGMwIn0.eyJhdWQiOiIyIiwianRpIjoiZWZiMmFjOTllZGJmMjUzZWI1NDVjNDgzZDAwOTFiN2RjZTIwMzI0NjI5NTAxMmZjOTM5NDFlMDZlNTcxMGYwYTgzNmYzYjJiMzEwZDc4YzAiLCJpYXQiOjE1MTMzMjM3OTksIm5iZiI6MTUxMzMyMzc5OSwiZXhwIjoxNTE1OTE1Nzk5LCJzdWIiOiIyMjAiLCJzY29wZXMiOltdfQ.AoGgErup2BKemNi6j_FjuGvksXrpwgUKBEWFstkLYmusOQX0fAMHAZMbPIxGIgTM4z4977d5X_dYvxMBba6rwUvC_scdPksB2CQQG7L0h9UQ1l3U8WVuOVCW0b-EpeCeyBAP6qRrx55_ITcFu0P9LtoBCKYc3n1lKfU_Ft-7rTAcspuU_dcPxdRsmF3xgn1YCYzPbsEBBTZ5rtwDEHqhE8ijjwoaKPMST9x9VKmflzG-fDh1H5t6QzX67Cuh5BezgN1tZR3xCjKE_UeQ6-7yvhs3P9W_jpyzCaFw-a4pUKXR8pFJxyvSUv9nyJpMZIfLXmnjhdXOklORhXrJJAStsjNE-iIP75AYaI4x6FcruwuyNB-AUVl_f5FYy765li3fedyPtGtHuopEQ8yi2lPvh9zkSuo-tmAlBTpZq3WeT5W_wU6H5_Y0E-j-EbWWA86PnScEB2B8XJ5DOcIktI_H0pvSDUGDrEtTE3O6NabQMTqxk53qs6f6UmbLufY2hs0EE4Gj4uiZNomjQDwJbIyrwGtwGaU0Zzd-St9LorsYCZK-ucaOlkVTb7pl5vLo1JR--194eeQy6eqp-3OxjAMzSrjKi7pNoiWGlOUfBjhlpuCfzLHSF-mNYUYOkQnOW8C7d4_Mz97eezlNtuo2ybbFjUGKAd_BbFoDdjodttxE0vs'];
-        dump($header_data);
-
         $curl = new curl($url, $method, $data, $header_data);
 
         if($info = $curl->getInfo()){
