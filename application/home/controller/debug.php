@@ -44,6 +44,8 @@ class debug extends controller {
             }
         }
 
+        dump($header_data);
+
         $curl = new curl($url, $method, $data, $header_data);
 
         if($info = $curl->getInfo()){
