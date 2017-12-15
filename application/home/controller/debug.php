@@ -30,6 +30,7 @@ class debug extends controller {
         }
 
         $data = [];
+        $header_data = [];
 
         foreach ($request as $k=>$v){
             foreach ($v as $k1=>$v1){
@@ -37,7 +38,13 @@ class debug extends controller {
             }
         }
 
-        $curl = new curl($url, $method, $data, $header);
+        foreach ($header as $k=>$v){
+            foreach ($v as $k1=>$v1){
+                $header_data[$header['key'][$k1]] = $v1;
+            }
+        }
+
+        $curl = new curl($url, $method, $data, $header_data);
 
         if($info = $curl->getInfo()){
 
