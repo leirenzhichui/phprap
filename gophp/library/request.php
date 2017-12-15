@@ -461,7 +461,7 @@ class request
      * @param null $default
      * @return null
      */
-    public static function get($name, $default = null)
+    public static function get($name = null, $default = null)
     {
 
         // 判断是否是cli命令行模式
@@ -520,7 +520,7 @@ class request
      * @param null $default
      * @return null
      */
-    public static function post($name, $default = null)
+    public static function post($name = null, $default = null)
     {
 
         $value = isset($name) ? $_POST[$name] : $_POST;

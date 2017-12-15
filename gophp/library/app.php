@@ -118,19 +118,11 @@ class app
 
         if(APP_DEBUG){
 
-            $viewFile = config::get('view', 'debug_template') . '.' . $suffix;
-
-            // 将session赋值到debug模块
-            $session = $_SESSION;
-            $view->assign('session', $session);
-
-            // 将cookie赋值到debug模块
-            $cookie = $_COOKIE;
-            $view->assign('cookie', $cookie);
+            $viewFile = $view->config['debug_template'] . '.' . $suffix;
 
         }else{
 
-            $viewFile = config::get('view', '404_template') . '.' . $suffix;
+            $viewFile = $view->config['404_template'] . '.' . $suffix;
 
         }
 
@@ -146,6 +138,7 @@ class app
             response::cli($message, 'error');
 
         }else{
+
             // 展示错误信息
             $view->assign('error', self::$error);
 

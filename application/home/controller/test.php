@@ -22,19 +22,22 @@ use gophp\schema;
 use app;
 
 
+//ini_set("display_errors", "On");
+//error_reporting(E_ALL ^ E_NOTICE);
 class test extends controller {
 
     public function index()
     {
 
+        $project_id = 1;
 
-        $install_path = APP_PATH . '/install/data/db.sql';
 
-         $create_data = app\db::map(1, $install_path);
+        // 先清空项目的数据字典表
+        $a = demo();
 
-         $a = schema::instance()->getFieldList('doc_apply');
 
-         dump($create_data);exit;
+
+         dump($a);exit;
 
 
 
