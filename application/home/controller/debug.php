@@ -40,11 +40,10 @@ class debug extends controller {
 
         foreach ($header as $k=>$v){
             foreach ($v as $k1=>$v1){
-                $header_data[] = $k1.':'.$v1;
+                $header_data[] = $header['key'][$k1].':'.$v1;
             }
         }
 
-        dump($header);
         dump($header_data);
 
         $curl = new curl($url, $method, $data, $header_data);
