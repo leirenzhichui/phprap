@@ -42,8 +42,6 @@ class debug extends controller {
             $header_data[] = $header['key'][$k1].':'.$v1;
         }
 
-        dump($header_data);
-
         $curl = new curl($url, $method, $data, $header_data);
 
         if($info = $curl->getInfo()){
