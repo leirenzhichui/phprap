@@ -38,10 +38,8 @@ class debug extends controller {
             }
         }
 
-        foreach ($header as $k=>$v){
-            foreach ($v as $k1=>$v1){
-                $header_data[] = $header['key'][$k1].':'.$v1;
-            }
+        foreach ($header['value'] as $k1=>$v1){
+            $header_data[] = $header['key'][$k1].':'.$v1;
         }
 
         dump($header_data);
